@@ -14,7 +14,7 @@ interface TImage {
 };
 
 export default async function Home() {
-  headers();
+  // headers();
   const maxNumber = Math.floor(Math.random() * (80 - 12 + 1) + 12);
   const minNumber = maxNumber - 12;
   const list : TList  = await fetch(`https://picsum.photos/v2/list?page=1&limit=1000`).then(res => res.json())

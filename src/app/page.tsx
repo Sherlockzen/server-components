@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { ImageList } from './components/ImageList'
 import { LoremImage } from './components/LoremImage'
+import { headers } from 'next/headers';
 
 type TList = TImage[]
 
@@ -13,6 +14,7 @@ interface TImage {
 };
 
 export default async function Home() {
+  headers();
   const maxNumber = Math.floor(Math.random() * (80 - 12 + 1) + 12);
   const minNumber = maxNumber - 12;
   const list : TList  = await fetch(`https://picsum.photos/v2/list?page=1&limit=1000`).then(res => res.json())
